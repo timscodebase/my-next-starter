@@ -1,7 +1,13 @@
 import Head from 'next/head'
+import { useContext } from 'react'
 import styles from '../styles/Home.module.css'
 
+import { ThemeContext } from '../contexts/themeContext'
+
 export default function Home() {
+  const { theme, setNewTheme } = useContext(ThemeContext)
+  console.log(theme)
+
   return (
     <div className={styles.container}>
       <Head>
@@ -13,6 +19,10 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
+
+        <button onClick={() => setNewTheme('lightGreen')}>
+          {theme ? theme.name : 'hi'}
+        </button>
 
         <p className={styles.description}>
           Get started by editing{' '}
