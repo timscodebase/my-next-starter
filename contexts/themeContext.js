@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from 'react'
 
-import { themes } from './themes'
+import themes from '../themes'
 
 const initialState = {
   theme: {
@@ -23,10 +23,10 @@ function ThemeProvider({ children }) {
 
   // On mount, read the preferred theme from the persistence
   useEffect(() => {
-    const lsTheme = localStorage.getItem('theme')
-    console.log(lsTheme)
-    const currentTheme = themes.find(({ name }) => name === lsTheme)
-    console.log(currentTheme)
+    // Get theme from localStorage and remove the wrapping quotes
+    const lsTheme = localStorage.getItem('theme').replace(/^"|"$/g, '')
+    const currentTheme = themes.find((o) => o.name === lsTheme)
+    currentTheme.isCurrent = true
     setTheme(currentTheme)
   }, [theme])
 
@@ -36,7 +36,7 @@ function ThemeProvider({ children }) {
     const currentTheme = themes.find(({ name }) => name === newTheme)
     console.log(currentTheme)
     setTheme(currentTheme)
-    alert(theme)
+    console.log(theme)
   }
 
   return (

@@ -1,0 +1,12 @@
+.themePicker {
+  display: flex;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
+.themePicker > div {
+  height: 30px;
+  width: 30px;
+  margin: 2px;
+}
