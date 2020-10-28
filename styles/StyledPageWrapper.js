@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const StyledPageWrapper = styled.div`
   .container {
     min-height: 100vh;
-    padding: 0 0.5rem;
+    padding: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -70,7 +70,7 @@ const StyledPageWrapper = styled.div`
   }
 
   .code {
-    background: #fafafa;
+    background: ${({ theme }) => theme.accentColor};
     border-radius: 5px;
     padding: 0.75rem;
     font-size: 1.1rem;

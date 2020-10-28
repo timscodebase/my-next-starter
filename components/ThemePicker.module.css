@@ -1,12 +1,36 @@
-.themePicker {
-  display: flex;
+.themePanel {
   position: absolute;
   top: 2rem;
   right: 2rem;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
-.themePicker > div {
+.themePicker {
+  display: flex;
+}
+
+.themeColors {
+  position: absolute;
+  margin-left: -2px !important;
+  margin-top: -2px !important;
+  top: 34px;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.5s;
+  opacity: 0;
+}
+
+.open {
+  opacity: 1;
+}
+
+.themeColors > div,
+.themePicker > div div {
   height: 30px;
   width: 30px;
   margin: 2px;
+}
+
+.themeColors > div {
+  margin: 4px;
 }
