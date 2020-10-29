@@ -1,7 +1,7 @@
 .themePanel {
   position: absolute;
-  top: 2rem;
-  right: 2rem;
+  top: 1rem;
+  right: 1rem;
   display: flex;
   background-color: rgba(255, 255, 255, 0.1);
 }
@@ -12,25 +12,46 @@
 
 .themeColors {
   position: absolute;
+  display: flex;
+  width: 135px !important;
+  height: 0 !important;
   margin-left: -2px !important;
-  margin-top: -2px !important;
+  margin-top: 0px !important;
   top: 34px;
   background-color: rgba(255, 255, 255, 0.1);
   transition: all 0.5s;
   opacity: 0;
+  overflow: hidden;
 }
 
-.open {
-  opacity: 1;
+.mainThemeColor {
+  position: relative;
 }
-
-.themeColors > div,
-.themePicker > div div {
+.mainThemeColor,
+.extendedColor {
   height: 30px;
   width: 30px;
   margin: 2px;
 }
 
-.themeColors > div {
-  margin: 4px;
+.extendedColor {
+  position: relative;
+  margin-top: 2px;
+}
+
+.colors {
+}
+
+.descriptions {
+  text-align: left;
+}
+.descriptions > div {
+  height: 30px;
+  display: grid;
+  align-items: center;
+  margin-left: 5px;
+}
+
+.extendedColor:first-of-type {
+  margin-top: 0;
 }

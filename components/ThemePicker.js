@@ -1,11 +1,13 @@
 import { useContext } from 'react'
 import ReactHoverObserver from 'react-hover-observer'
 
-import styles from './ThemePicker.module.css'
-
 import themes from '../themes'
 
+import styles from './ThemePicker.module.css'
+
 import { ThemeContext } from '../contexts/themeContext'
+
+import ColorsDropDown from './ColorsDropDown'
 
 export default function ThemePicker() {
   const { setNewTheme } = useContext(ThemeContext)
@@ -19,19 +21,16 @@ export default function ThemePicker() {
             <ReactHoverObserver>
               {({ isHovering }) => (
                 <div
+                  className={styles.mainThemeColor}
                   onClick={() => setNewTheme(theme.name)}
                   style={{
                     backgroundColor: theme.bgColor,
                     border: border,
                   }}
                 >
-                  <div
-                    className={styles.themeColors}
-                    style={{ opacity: isHovering ? 1 : 0 }}
-                  >
-                    <div style={{ backgroundColor: theme.textColor }}></div>
-                    <div style={{ backgroundColor: theme.accentColor }}></div>
-                  </div>
+                  {isHovering ? (
+                    <ColorsDropDown isHovering={isHovering} theme={theme} />
+                  ) : null}
                 </div>
               )}
             </ReactHoverObserver>

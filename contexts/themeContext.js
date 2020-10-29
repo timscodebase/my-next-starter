@@ -34,7 +34,6 @@ function ThemeProvider({ children }) {
     }
 
     const currentTheme = themes.find((o) => o.name === lsTheme)
-    // currentTheme.isCurrent = true
     setTheme(currentTheme)
   }, [theme])
 
