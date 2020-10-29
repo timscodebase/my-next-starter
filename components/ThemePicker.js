@@ -18,11 +18,6 @@ export default function ThemePicker() {
                 onMouseLeave: ({ unsetIsHovering }) => {
                   unsetIsHovering()
                 },
-                touchstart: ({ setIsHovering }) => {
-                  setIsHovering()
-                  unsetIsHovering()
-                },
-                touchend: ({ unsetIsHovering }) => {},
               }}
             >
               <MainThemeColor theme={theme} />

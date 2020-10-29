@@ -55,3 +55,9 @@
 .extendedColor:first-of-type {
   margin-top: 0;
 }
+
+@media (max-width: 600px) {
+  .themePanel {
+    display: none;
+  }
+}
