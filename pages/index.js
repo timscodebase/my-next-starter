@@ -1,74 +1,54 @@
-import Head from 'next/head'
-import { useContext } from 'react'
+import Link from 'next/link'
 
-import ThemePicker from '../components/ThemePicker'
-
-import { ThemeContext } from '../contexts/themeContext'
-
-import StyledPageWrapper from '../styles/StyledPageWrapper'
+import MainTemplate from '../templates/MainTemplate'
 
 export default function Home() {
-  const { theme } = useContext(ThemeContext)
   return (
-    <StyledPageWrapper theme={theme}>
-      <div className="container">
-        <ThemePicker />
-        <Head>
-          <title>Create Next App</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
+    <MainTemplate>
+      <main className="main">
+        <h1 className="title">Welcome to my Testing Ground</h1>
 
-        <main className="main">
-          <h1 className="title">
-            Welcome to <a href="https://nextjs.org">Next.js!</a>
-          </h1>
+        <p className="description">
+          Each page will show of a small byte of code that I am testing and/or
+          learning.
+        </p>
 
-          <p className="description">
-            Get started by editing <code className="code">pages/index.js</code>
-          </p>
-
-          <div className="grid">
-            <a href="https://nextjs.org/docs" className="card">
-              <h3>Documentation &rarr;</h3>
-              <p>Find in-depth information about Next.js features and API.</p>
-            </a>
-
-            <a href="https://nextjs.org/learn" className="card">
-              <h3>Learn &rarr;</h3>
-              <p>Learn about Next.js in an interactive course with quizzes!</p>
-            </a>
-
-            <a
-              href="https://github.com/vercel/next.js/tree/master/examples"
-              className="card"
-            >
-              <h3>Examples &rarr;</h3>
-              <p>Discover and deploy boilerplate example Next.js projects.</p>
-            </a>
-
-            <a
-              href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              className="card"
-            >
-              <h3>Deploy &rarr;</h3>
+        <div className="grid">
+          <Link href="/proposal-temporal">
+            <a className="card">
+              <h3>Proposal Temporal &rarr;</h3>
               <p>
-                Instantly deploy your Next.js site to a public URL with Vercel.
+                Date has been a long-standing pain point in ECMAScript. Here I
+                will be playing with a testing the proposed <code>Date</code>{' '}
+                API via the provided polyfill
               </p>
             </a>
-          </div>
-        </main>
+          </Link>
 
-        <footer className="footer">
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Powered by{' '}
-            <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
+          <a href="https://nextjs.org/learn" className="card">
+            <h3>Learn &rarr;</h3>
+            <p>Learn about Next.js in an interactive course with quizzes!</p>
           </a>
-        </footer>
-      </div>
-    </StyledPageWrapper>
+
+          <a
+            href="https://github.com/vercel/next.js/tree/master/examples"
+            className="card"
+          >
+            <h3>Examples &rarr;</h3>
+            <p>Discover and deploy boilerplate example Next.js projects.</p>
+          </a>
+
+          <a
+            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+            className="card"
+          >
+            <h3>Deploy &rarr;</h3>
+            <p>
+              Instantly deploy your Next.js site to a public URL with Vercel.
+            </p>
+          </a>
+        </div>
+      </main>
+    </MainTemplate>
   )
 }
