@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useEffect, useState, useRef } from 'react'
 
 import styles from './ThemePicker.module.css'
 
@@ -43,6 +43,7 @@ export default function ColorsDropdown({ isHovering, theme }) {
       <div
         className={styles.descriptions}
         style={{
+          color: theme.accentColor,
           textAlign: themeRight > viewportWidth ? 'right' : 'left',
           marginRight: themeRight > viewportWidth ? '5px' : '0',
         }}
