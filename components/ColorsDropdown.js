@@ -1,8 +1,11 @@
-import { useEffect, useState, useRef } from 'react'
+import { useContext, useEffect, useState, useRef } from 'react'
+
+import { ThemeContext } from '../contexts/themeContext'
 
 import styles from './ThemePicker.module.css'
 
 export default function ColorsDropdown({ isHovering, theme }) {
+  const { theme: mainTheme } = useContext(ThemeContext)
   const [themeRight, setThemeRight] = useState(0)
   const [viewportWidth, setViewportWidth] = useState(0)
   const themeColorsRef = useRef(null)
@@ -23,6 +26,7 @@ export default function ColorsDropdown({ isHovering, theme }) {
         overflow: isHovering ? 'visible' : 'hidden',
         flexDirection: themeRight > viewportWidth ? 'row-reverse' : 'row',
         right: themeRight > viewportWidth ? '-2px' : 'initial',
+        backgroundColor: mainTheme.textColor,
       }}
       ref={themeColorsRef}
     >

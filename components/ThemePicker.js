@@ -18,6 +18,7 @@ export default function ThemePicker() {
       className={styles.themePanel}
       style={{
         top: isOpen ? '0' : '-50px',
+        backgroundColor: theme.textColor,
       }}
     >
       {themes.map((theme) => {
@@ -44,7 +45,7 @@ export default function ThemePicker() {
       <div
         onClick={toggleThemePicker}
         className={styles.openPicker}
-        style={{ color: theme.textColor }}
+        style={{ color: theme.textColor, backgroundColor: theme.accentColor }}
       >
         Set Site Theme
       </div>
