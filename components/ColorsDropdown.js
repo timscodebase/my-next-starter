@@ -47,7 +47,7 @@ export default function ColorsDropdown({ isHovering, theme }) {
       <div
         className={styles.descriptions}
         style={{
-          color: theme.accentColor,
+          color: mainTheme.accentColor,
           textAlign: themeRight > viewportWidth ? 'right' : 'left',
           marginRight: themeRight > viewportWidth ? '5px' : '0',
         }}

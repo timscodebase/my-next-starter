@@ -1,16 +1,17 @@
 import styled from 'styled-components'
 
 const StyledPageWrapper = styled.div`
+  background-color: ${({ theme }) => theme.bgColor};
+
   .container {
     min-height: 100vh;
     padding: 0;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     position: relative;
     color: ${({ theme }) => theme.textColor};
-    background-color: ${({ theme }) => theme.bgColor};
   }
 
   .main {
@@ -22,11 +23,44 @@ const StyledPageWrapper = styled.div`
     align-items: center;
   }
 
+  .logo {
+    font-size: 2rem;
+    color: ${({ theme }) => theme.accentColor};
+  }
+
+  .content,
+  .photo {
+    width: 50%;
+  }
+
+  .content {
+  }
+
+  .photo {
+    min-height: 100%;
+    background-image: url(${({ theme }) => theme.photo});
+    /* background-image: url('https://images.pexels.com/photos/3894157/pexels-photo-3894157.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260'); */
+    background-size: cover;
+    box-shadow: inset 10px 0px 28px -4px rgba(0, 0, 0, 0.75);
+  }
+
+  .header {
+    width: 100%;
+    height: 100px;
+    padding: 0 1.5rem;
+    color: ${({ theme }) => theme.bgColor};
+    background-color: ${({ theme }) => theme.textColor};
+    border-bottom: 2px solid ${({ theme }) => theme.accentColor};
+    display: flex;
+    align-items: center;
+  }
+
   .footer {
     width: 100%;
     height: 100px;
-    color: ${({ theme }) => theme.textColor};
-    border-top: 1px solid ${({ theme }) => theme.accentColor};
+    color: ${({ theme }) => theme.bgColor};
+    background-color: ${({ theme }) => theme.textColor};
+    border-top: 2px solid ${({ theme }) => theme.accentColor};
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,7 +128,7 @@ const StyledPageWrapper = styled.div`
     text-align: left;
     color: inherit;
     text-decoration: none;
-    border: 1px solid ${({ theme }) => theme.accentColor};
+    border: 2px solid ${({ theme }) => theme.accentColor};
     border-radius: 10px;
     transition: color 0.15s ease, border-color 0.15s ease;
   }
