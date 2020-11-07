@@ -24,6 +24,7 @@ const StyledPageWrapper = styled.div`
   }
 
   .logo {
+    height: 1em;
     font-size: 2rem;
     color: ${({ theme }) => theme.accentColor};
   }
@@ -151,14 +152,24 @@ const StyledPageWrapper = styled.div`
     line-height: 1.5;
   }
 
-  .logo {
-    height: 1em;
-  }
-
-  @media (max-width: 600px) {
+  @media (max-width: 1000px) {
     .grid {
       width: 100%;
       flex-direction: column;
+    }
+
+    .container {
+      flex-wrap: wrap !important;
+      flex-direction: column-reverse !important;
+    }
+
+    .content,
+    .photo {
+      width: 100% !important;
+    }
+
+    .photo {
+      min-height: 50% !important;
     }
   }
 `

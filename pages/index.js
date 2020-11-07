@@ -60,7 +60,30 @@ export default function Home() {
             </div>
           </main>
         </div>
-        <div className="photo"></div>
+        <div className="photo">
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+        </div>
       </MainTemplate>
     </>
   )
