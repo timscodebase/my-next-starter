@@ -10,10 +10,12 @@
     "deploy": "yarn build && yarn export"
   },
   "dependencies": {
+    "formik": "^2.2.3",
     "next": "9.5.5",
     "proposal-temporal": "^0.4.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "react-gravatar": "^2.6.3",
     "react-hover-observer": "^2.1.1",
     "react-syntax-highlighter": "^15.3.0",
     "react-touch-events": "^2.1.0",

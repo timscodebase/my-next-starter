@@ -1,10 +1,13 @@
 import { ThemeProvider } from '../contexts/themeContext'
+import { UserProvider } from '../contexts/userContext'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider>
-      <Component {...pageProps} />
+      <UserProvider>
+        <Component {...pageProps} />
+      </UserProvider>
     </ThemeProvider>
   )
 }

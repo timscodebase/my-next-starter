@@ -19,17 +19,14 @@ function ThemeProvider({ children }) {
     bgColor: '#39ADE0',
     textColor: '#eeeeee',
     accentColor: '#E04F66',
-  }) // Default themeName is lightBlue
+  })
 
-  // On mount, read the preferred theme from the persistence
   useEffect(() => {
     let lsTheme = ''
 
     if (localStorage.getItem('theme') == null) {
       lsTheme = 'lightBlue'
-      console.log(lsTheme)
     } else {
-      // Get theme from localStorage and remove the wrapping quotes
       lsTheme = localStorage.getItem('theme').replace(/^"|"$/g, '')
     }
 
@@ -37,7 +34,6 @@ function ThemeProvider({ children }) {
     setTheme(currentTheme)
   }, [theme])
 
-  // To set the new theme
   const setNewTheme = (newTheme) => {
     localStorage.setItem('theme', JSON.stringify(newTheme))
     const currentTheme = themes.find(({ name }) => name === newTheme)

@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import ReactHoverObserver from 'react-hover-observer'
 
 import { ThemeContext } from '../contexts/themeContext'
@@ -9,15 +9,10 @@ import MainThemeColor from '../components/MainThemeColor'
 
 export default function ThemePicker() {
   const { theme } = useContext(ThemeContext)
-  const [isOpen, setIsOpen] = useState(false)
-  const toggleThemePicker = () => {
-    setIsOpen(!isOpen)
-  }
   return (
     <div
       className={styles.themePanel}
       style={{
-        top: isOpen ? '0' : '-50px',
         backgroundColor: theme.textColor,
       }}
     >
@@ -34,21 +29,11 @@ export default function ThemePicker() {
                 },
               }}
             >
-              <MainThemeColor
-                toggleThemePicker={toggleThemePicker}
-                theme={theme}
-              />
+              <MainThemeColor theme={theme} />
             </ReactHoverObserver>
           </div>
         )
       })}
-      <div
-        onClick={toggleThemePicker}
-        className={styles.openPicker}
-        style={{ color: theme.textColor, backgroundColor: theme.accentColor }}
-      >
-        Set Site Theme
-      </div>
     </div>
   )
 }

@@ -3,7 +3,6 @@ import MainTemplate from '../templates/MainTemplate'
 
 import A from '../components/A'
 import Code from '../components/Code'
-import DatePicker from '../components/DatePicker'
 
 export default function ProposalTemporal() {
   const timeZone = Temporal.now.timeZone().name
@@ -25,7 +24,6 @@ export default function ProposalTemporal() {
       <Code>Temporal.now.timeZone().name</Code>
       <p> to tell that you are in the {timeZone} timezone</p>
       <br />
-      {/* <DatePicker /> */}
     </MainTemplate>
   )
 }
