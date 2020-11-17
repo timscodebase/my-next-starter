@@ -53,6 +53,19 @@ const StyledSubPageWrapper = styled.div`
     align-items: center;
   }
 
+  a {
+    color: ${({ theme }) => theme.textColor};
+    border-bottom: 1px dotted ${({ theme }) => theme.textColor};
+
+    &:hover {
+      border-bottom: 1px dotted ${({ theme }) => theme.accentColor};
+    }
+  }
+
+  .avatar-wrapper {
+    margin-left: auto;
+  }
+
   .footer img {
     margin-left: 0.5rem;
   }

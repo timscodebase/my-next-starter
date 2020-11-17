@@ -113,6 +113,10 @@ const StyledPageWrapper = styled.div`
       DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
   }
 
+  .avatar-wrapper {
+    margin-left: auto;
+  }
+
   .grid {
     display: flex;
     align-items: center;

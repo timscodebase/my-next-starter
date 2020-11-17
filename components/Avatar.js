@@ -1,5 +1,7 @@
 import { useContext, useState } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+
 import Gravatar from 'react-gravatar'
 import styled from 'styled-components'
 
@@ -31,7 +33,8 @@ const StyledAvatar = styled.div`
     opacity: 0;
 
     a {
-      padding-bottom: 10px;
+      color: ${(props) => props.theme.accentColor};
+      margin-bottom: 10px;
 
       &:hover {
         font-weight: bold;
@@ -40,17 +43,20 @@ const StyledAvatar = styled.div`
   }
 `
 
-export default function Avatar() {
+export default function Avatar({ isHovering = false }) {
   const { user } = useContext(UserContext)
   const { theme } = useContext(ThemeContext)
+  console.log(theme)
   const [isOpen, setIsOpen] = useState(false)
+  const router = useRouter()
+
   return (
-    <StyledAvatar theme={theme} onClick={() => setIsOpen(!isOpen)}>
+    <StyledAvatar theme={theme} onClick={() => router.push('/profile')}>
       <Gravatar className="gravatar" email={user.email} />
       <div
         className="menu"
         style={{
-          opacity: isOpen ? 1 : 0,
+          opacity: isHovering ? 1 : 0,
         }}
       >
         <Link href="/profile">

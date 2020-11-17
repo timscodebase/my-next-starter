@@ -1,5 +1,5 @@
-import next from 'next'
 import Link from 'next/link'
+import ReactHoverObserver from 'react-hover-observer'
 
 import Avatar from './Avatar'
 
@@ -9,7 +9,9 @@ export default function Header() {
       <Link href="/">
         <a className="logo">Logo</a>
       </Link>
-      <Avatar />
+      <ReactHoverObserver className="avatar-wrapper">
+        <Avatar />
+      </ReactHoverObserver>
     </header>
   )
 }

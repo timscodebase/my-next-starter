@@ -1,4 +1,6 @@
-import { createContext, useEffect, useState } from 'react'
+import { createContext, useContext, useEffect, useState } from 'react'
+
+import { UserContext } from './userContext'
 
 import themes from '../themes'
 
@@ -14,6 +16,7 @@ const initialState = {
 const ThemeContext = createContext(initialState)
 
 function ThemeProvider({ children }) {
+  const { user: oldUser, updateUser } = useContext(UserContext)
   const [theme, setTheme] = useState({
     name: 'lightBlue',
     bgColor: '#39ADE0',
@@ -22,22 +25,27 @@ function ThemeProvider({ children }) {
   })
 
   useEffect(() => {
+    const user = JSON.parse(localStorage.getItem('user'))
     let lsTheme = ''
 
-    if (localStorage.getItem('theme') == null) {
-      lsTheme = 'lightBlue'
+    if (user == null) {
+      setTheme('lightBlue')
+      return
     } else {
-      lsTheme = localStorage.getItem('theme').replace(/^"|"$/g, '')
+      console.log(user.theme)
+      setTheme(user.theme)
     }
-
-    const currentTheme = themes.find((o) => o.name === lsTheme)
-    setTheme(currentTheme)
   }, [theme])
 
   const setNewTheme = (newTheme) => {
-    localStorage.setItem('theme', JSON.stringify(newTheme))
-    const currentTheme = themes.find(({ name }) => name === newTheme)
-    setTheme(currentTheme)
+    if (localStorage.getItem('user') !== null) {
+    } else {
+      localStorage.setItem('theme', JSON.stringify(newTheme))
+      const currentTheme = themes.find(({ name }) => name === newTheme)
+      setTheme(currentTheme)
+      console.log(theme)
+      return
+    }
   }
 
   return (
